@@ -33,6 +33,9 @@ public class ConcortHotelPage {
     @FindBy(xpath = "//span[@class='caption-subject font-green-sharp bold uppercase']")
     public WebElement basariliGrisiYaziElementi;
 
+    @FindBy (xpath = "//*[.='Try again please']")
+    public WebElement isLoginFailed;
+
 
 
 
