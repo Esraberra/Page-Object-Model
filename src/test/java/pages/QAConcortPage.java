@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class QAConcortPage {
@@ -34,6 +35,30 @@ public class QAConcortPage {
     @FindBy (xpath = "//*[.='Try again please']")
     public WebElement isLoginFailed;
 
+    @FindBy(xpath = "//span[text()='Hotel Management']")
+
+ public WebElement hotelManagement;
+ @FindBy(partialLinkText = "Hotel List")
+ public WebElement hotelList;
+
+ @FindBy(className = "hidden-480")
+
+ public WebElement ADDhotel;
+
+ @FindBy(id = "Code")
+
+ public WebElement ADDhotelKodBox;
+
+
+
+ public void ConcortHotelLogin(){
+  Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
+  QAConcortPage qaConcortPage=new QAConcortPage();
+  qaConcortPage.Login.click();
+  qaConcortPage.userNameBox.sendKeys(ConfigReader.getProperty("CHQAValidUsername"));
+  qaConcortPage.passwordBox.sendKeys(ConfigReader.getProperty("CHQAValidPassword"));
+  qaConcortPage.LoginButton.click();
+ }
 
 
 

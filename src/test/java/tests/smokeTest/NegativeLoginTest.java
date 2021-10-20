@@ -16,8 +16,9 @@ public class NegativeLoginTest {
 //2) https://qa-environment.concorthotel.com/ adresine git
 //3) Login butonuna bas
 //4) Verilen senaryolar ile giris yapilamadigini test et
-    @Test (priority = 1)
+    @Test
     public void falseUserName(){
+
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
         QAConcortPage qaConcortPage=new QAConcortPage();
         qaConcortPage.Login.click();
@@ -29,6 +30,7 @@ public class NegativeLoginTest {
     }
       @Test
     public void falsePassword(){
+
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
         QAConcortPage qaConcortPage=new QAConcortPage();
         qaConcortPage.Login.click();
@@ -41,6 +43,7 @@ public class NegativeLoginTest {
 
       @Test
     public void falsePasswordandUser(){
+
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
         QAConcortPage qaConcortPage=new QAConcortPage();
         qaConcortPage.Login.click();
@@ -49,6 +52,7 @@ public class NegativeLoginTest {
         qaConcortPage.LoginButton.click();
         Assert.assertTrue(qaConcortPage.isLoginFailed.isDisplayed());
 
+        Driver.closeDriver();
     }
 }
 
