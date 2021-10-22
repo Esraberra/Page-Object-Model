@@ -1,8 +1,10 @@
 package tests.day15;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FacebookPage;
 import pages.QAConcortPage;
@@ -25,7 +27,7 @@ public class C02_EndToEndTest {
     //10. OK butonuna tıklayın.
 
     @Test
-    public void createHotel(){
+    public void createHotel() throws InterruptedException {
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
         QAConcortPage qaConcortPage=new QAConcortPage();
         qaConcortPage.ConcortHotelLogin();
@@ -38,6 +40,18 @@ public class C02_EndToEndTest {
         actions.click(qaConcortPage.ADDhotelKodBox).sendKeys(faker.address().zipCode()).sendKeys(Keys.TAB).sendKeys(faker.name().name()).sendKeys(Keys.TAB).sendKeys(faker.address().fullAddress()).sendKeys(Keys.TAB).
                 sendKeys(faker.phoneNumber().phoneNumber()).sendKeys(Keys.TAB).
                 sendKeys(faker.internet().emailAddress()).perform();
+
+        qaConcortPage.hotelTypeButton.click();
+        qaConcortPage.hotelType2.click();
+        qaConcortPage.saveButton.click();
+        String expectedSuccessMessage="Hotel was inserted successfully";
+        Thread.sleep(3000);
+        System.out.println("*****************");
+        System.out.println(qaConcortPage.successRegisterMessage.getText());
+        Assert.assertTrue(qaConcortPage.successRegisterMessage.isDisplayed());
+
+
+
 
     }
 
