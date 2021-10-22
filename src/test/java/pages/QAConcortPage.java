@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -102,6 +103,12 @@ public WebElement saveButton;
 
 public List<WebElement> dördüncüSütunListesi;
 
+@FindBy(xpath = "//tbody//tr[2]/td")
+ public List<WebElement> columnNumbersInTbody;
+
+@FindBy(xpath = "//tbody//tr/td")
+public List<WebElement> tbodyCellNumbers;
+
  public void ConcortHotelLogin(){
   Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
   QAConcortPage qaConcortPage=new QAConcortPage();
@@ -111,7 +118,16 @@ public List<WebElement> dördüncüSütunListesi;
   qaConcortPage.LoginButton.click();
  }
 
+ public String printData(int row, int column){
 
+ //tbody//tr[3]//td[5]
+
+String xpath="//tbody//tr["+row+"]//td["+column+"]";
+String data =Driver.getDriver().findElement(By.xpath(xpath)).getText();
+  System.out.println("raw number : " + row + " and " + " column number : "+ column+ " results : "  +data);
+return data;
+
+ }
 
 
 

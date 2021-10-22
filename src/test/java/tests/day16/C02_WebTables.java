@@ -42,6 +42,7 @@ public class C02_WebTables {
     //tüm body i tek  bir Webelement olarak locate edebilirz
     //tabloda happy hotel var mi gibi sorular icin ideal bir cözüm olur.
     System.out.println(qaConcortPage.tbodyTumu.getText());
+
     Assert.assertTrue(qaConcortPage.tbodyTumu.getText().contains("HAPPY HOTEL"));
 
     System.out.println("tablodaki satir sayisi : "+qaConcortPage.tbodyTr.size());
