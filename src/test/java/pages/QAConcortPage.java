@@ -66,11 +66,15 @@ public class QAConcortPage {
  @FindBy (id = "IDGroup")
  public WebElement hotelTypeButton;
 
+ @FindBy(id = "IDGroupRoomType")
+ public WebElement roomType;
+
  @FindBy (xpath = "//option[text()='Hotel Type2']")
  public WebElement hotelType2;
 
  @FindBy (id = "btnSubmit")
 public WebElement saveButton;
+
  @FindBy(xpath = "//button[@data-bb-handler='ok']")
  public WebElement alertButtonOK;
 
