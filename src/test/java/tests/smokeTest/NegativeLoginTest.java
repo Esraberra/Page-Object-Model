@@ -16,7 +16,7 @@ public class NegativeLoginTest {
 //2) https://qa-environment.concorthotel.com/ adresine git
 //3) Login butonuna bas
 //4) Verilen senaryolar ile giris yapilamadigini test et
-    @Test
+    @Test (groups = "birinci grup")
     public void falseUserName(){
 
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));

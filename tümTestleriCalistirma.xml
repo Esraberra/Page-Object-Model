@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="tüm testler calistirma">
+    <test name="berlirligruplari calistirma">
+        <packages>
+            <package name=".*"></package>
+        </packages>
+        <!--tüm testleri calistirma-->
+    </test>
+</suite>

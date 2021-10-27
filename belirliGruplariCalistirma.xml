@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="gruplari calistirma">
+    <test name="berlirligruplari calistirma">
+<groups>
+    <run>
+        <include name="birinci grup">
+            
+        </include>
+    </run>
+</groups>
+<packages>
+    <package name="tests.smokeTest"></package>
+    <package name="tests.day17"></package>
+</packages>
+
+        <!--eger farkli cok fazla sayida methodu calistiracaksak tek tek tüm methodlari tanimlamak zor olabilir
+        bunun yerine calistirmak istedigimiz test methodlarina grup ismi verebiliriz
+        burada dikkat edilecekler: xml dosyasi hazirlanirken diger xml lerden farkli olarak iki hiyerarsi
+        olusturmamiz gerekir. birisi; calistirilacak grup isimleri veya gruplarin kombinasyonlarini belirlemek icin
+        digeri belirlenen kombinasyondaki grup isimlerinin bulundugu yeri göstermek icin
+        ikincisi : belirledigim rup disinda hic bir methodun calismasina müsaade edilemeyegi icin depends on ve keywordler ile bagimli olan
+        testler sorun cikarabilir
+        ucuncusu: bir test calisriken diger testin calismasina zarar verebilir
+        örnegin concort hotelde bir defa login olup logout olmazsaniz sonraki testler login yazisini bulamayabilir
+        -->
+    </test>
+</suite>

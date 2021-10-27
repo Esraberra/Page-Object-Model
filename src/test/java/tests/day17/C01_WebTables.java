@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class C01_WebTables {
 
-    @Test
+    @Test  (groups = "birinci grup")
 
     public void test(){
 //Bir class oluşturun : C02_WebTables
