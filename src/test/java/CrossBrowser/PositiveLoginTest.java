@@ -1,4 +1,6 @@
 package CrossBrowser;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.QAConcortPage;
@@ -15,7 +17,7 @@ public class PositiveLoginTest extends TestBaseCross {
 //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
 
     @Test
-    public void positiveLoginTest(){
+    public void positiveLoginTest() throws InterruptedException {
         // cross browser testte test base class'ina geri donuyoruz
         // bunun sebebi @parameters notasyanu
         // dolayisiyla Driver.getDriver() ve pages sayfalarindaki locator'lari kullanamayiz
