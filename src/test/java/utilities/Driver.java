@@ -10,7 +10,6 @@ import org.openqa.selenium.opera.OperaDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
-
  private static WebDriver driver;
  // driver'i baska class'lardan sadece Driver class ismi ile cagirabilmek icin STATIC yaptik
  // henuz bu driver ile ilgili ayarlar yapmadigim icin baska class'lar bunu yanlislikla kullanmasin diye
